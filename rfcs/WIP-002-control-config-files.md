@@ -4,13 +4,18 @@
 - Implementation PR: (leave this empty)
 
 # Summary
+> new command maybe rc, or another name
 
-Brief explanation of the feature.
+read config of preset, select and copy from command line `neo rc` or `neo list --rc`.
 
 # Basic example
 
-If the proposal involves a new or changed API, include a basic code example.
-Omit this section if it's not applicable.
+`neo rc`
+
+- `ci.yaml`
+- `release yaml`
+
+select and copy to clipboard
 
 # Motivation
 
@@ -22,6 +27,8 @@ Omit this section if it's not applicable.
 - Q2 `prepack` 无法设置其他项目的工作流
 
 如果只是预想中的那样，控制 `workflows`，那么另外的文件怎么办，比如说`.eslintrc, .gitignore`。另外，`prepack` 还会修改文件。这部分工作和 `generator(WIP, No RFC)`重合了。
+
+# Detailed design
 
 几种方案：
 
@@ -51,23 +58,22 @@ already has generator and config generator
 2. list already generator(type=config or workflow)
 3. select generator and exec it(maybe exec parts of generator workflow will be exec)
 
-**Plan B & C** 应该一起实现，`C`在`B`之后。
+**Plan B & C** 应该一起实现，`C`在`B`之后。这个RFC只会讨论`neo rc`。
 
-# Detailed design
+**below config files supported**
 
-github workflows
-
-## How to use it
-
-maybe `neo prepack(better) --module=ci` or `neo ci` to select what kinds of ci workflows
+- github workflows
+- editor config
+- eslint config
+- issue template
 
 ## How to design workflow
 
-put into workflows into `preset`
+put into configs into `preset`
 
 ```json
 {
-  "workflows": [
+  "configs": [
     {
       "name": "ci", // workflow id
       "workflow: "workflow" // workflow filepath
@@ -76,32 +82,24 @@ put into workflows into `preset`
 }
 ```
 
+## How to use it
+
+maybe `neo rc` or `neo list --ci` will read configs, and list, user will select what kinds of config file to copy.
+
 # Drawbacks
-> TODO
 
-Why should we *not* do this? Please consider:
-
-- implementation cost, both in term of code size and complexity
-- whether the proposed feature can be implemented in user space
-- the impact on teaching people Vue
-- integration of this feature with other existing and planned features
-- cost of migrating existing Vue applications (is it a breaking change?)
-
-There are tradeoffs to choosing any path. Attempt to identify them here.
-
-# Alternatives
-> TODO
-
-What other designs have been considered? What is the impact of not doing this?
+- Not sure it's strong needed feature? [#alternatives](#alternatives) already list another option to implement it.
+- View config detail maybe increase size, and not able to cover all file type syntax-highlight
 
 # Adoption strategy
-> TODO
 
-If we implement this proposal, how will existing Vue developers adopt it? Is
-this a breaking change? Can we write a codemod? Can we provide a runtime adapter library for the original API it replaces? How will this affect other projects in the Vue ecosystem?
+- preset-package will has new field named `config`, contain all configs
+
+# Alternatives
+
+1. copy paste manual from your other projects - `neo rc` is much fast
+2. builtin generator, not to copy it, just run generator to mv & copy & modify these files to target place - `generator` is heavy, sometimes I know what config I want, I just want to copy it
 
 # Unresolved questions
-> TODO
 
-Optional, but suggested for first drafts. What parts of the design are still
-TBD?
+- command name, new command or just old command options
