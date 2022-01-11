@@ -1,7 +1,6 @@
-- Start Date: (fill me in with today's date, YYYY-MM-DD)
-- Target Major Version: (2.x / 3.x)
-- Reference Issues: (fill in existing related issues, if any)
-- Implementation PR: (leave this empty)
+- Start Date: 2022/01/11 23:23:45
+- Target Major Version: 3.x
+- Implementation PR: https://github.com/neo-hack/neo/pull/308
 
 # Summary
 > new command maybe rc, or another name
@@ -84,12 +83,12 @@ put into configs into `preset`
 
 ## How to use it
 
-maybe `neo rc` or `neo list --ci` will read configs, and list, user will select what kinds of config file to copy.
+maybe ~~`neo rc`~~ or `neo list configs` will read configs, and list, user will select what kinds of config file to copy.
 
 # Drawbacks
 
-- Not sure it's strong needed feature? [#alternatives](#alternatives) already list another option to implement it.
-- View config detail maybe increase size, and not able to cover all file type syntax-highlight
+- ~~Not sure it's strong needed feature? [#alternatives](#alternatives) already list another option to implement it.~~
+- [ ] View config detail maybe increase size, and not able to cover all file type syntax-highlight
 
 # Adoption strategy
 
@@ -102,4 +101,6 @@ maybe `neo rc` or `neo list --ci` will read configs, and list, user will select 
 
 # Unresolved questions
 
-- command name, new command or just old command options
+~~command name, new command or just old command options~~
+
+use `neo list configs`
