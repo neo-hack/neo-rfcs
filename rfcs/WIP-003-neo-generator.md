@@ -10,9 +10,8 @@ create **manipulate** workflow or generator to `copy/mv/manipulate` files.
 
 ```yaml
 job: PNPM Workflow
-  - action: replace
+  - uses: replace
     paths: '*.js'
-  - use: gulp-css
 ```
 
 publish this yaml file as npm package or use directly
@@ -37,16 +36,14 @@ after created project from template, have to manual modify file content, like pk
 
 ```yaml
 job: PNPM Workflow
-  - action: replace
+  - uses: replace
     paths: '*.js'
-  - use: gulp-css
+  - run: shell command
 ```
 
 will convert into gulp task list
 
-- `action: replace` mean neo built in gulp-replace to replace content
-- `use: gulp-css` mean it will load from external npm-pkg as gulp task
-
+- `uses: replace` in default, load built-in action first, feature will resolve extra action like `npm or remote repo`
 # Drawbacks
 
 - gulp improve neo-pkg
@@ -58,9 +55,9 @@ will convert into gulp task list
 
 # Adoption strategy
 
-- neo should builtin **at least one official generator** as prepack default method
+- neo should built-in **at least one official generator** as prepack default method
 
 # Unresolved questions
 
-- use majo or gulp
-- `use` how to load remote pkg
+- `use` how to load `remote/npm` pkg
+- `preset` contain config files, generator should support load files from `preset`?
