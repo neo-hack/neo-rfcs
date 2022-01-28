@@ -31,7 +31,7 @@ preset package type define
 - name: display name
 - perf: valid npm-package define, e.g `npm@version, npm, github:user/repo`
 
-in the future, I want load templates from `nextjs` repo, which contain templates under `examples`
+- [ ] in the future, I want load templates from `nextjs` repo, which contain templates under `examples`
 
 ```ts
 // nextjs preset package
@@ -63,11 +63,13 @@ package type define in `neo-lock.yaml`
 }
 ```
 
-- name - template display name, could be invalid-npm-package name like `npm#hash`. If package created from preset, **should same as defined in preset packages**
+- name - template display name, could be invalid-npm-package name like `npm#hash`. If package created from preset, **should same as defined in preset packages**. If duplicated, formatted like `name (pref)`
 - version
 - pref - total different like `pnpm.pref`, mean `wanted`, could be `npm|npm@version|github-url`
 - version - optional, if perf is `github:xx`
 - id - from resolution
+
+## converted from commands
 
 `neo create <npm|npm@version|github:user/repo>`
 
@@ -202,3 +204,4 @@ No Adoption
 - [x] perf should same as **preset package perf**
 - [x] should update test files
 - [x] rename the rfc
+- [ ] implement nested selected
