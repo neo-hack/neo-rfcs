@@ -44,6 +44,21 @@ job: PNPM Workflow
 will convert into gulp task list
 
 - `uses: replace` in default, load built-in action first, feature will resolve extra action like `npm or remote repo`
+
+**prepack**
+
+will rename to run.
+
+support run `**.yaml` or `npmpackage` as generator.
+
+**template**
+
+if template include `.neo` fold and `generator` yaml file, will start exec generator after create it
+
+**preset**
+
+support generator field. `neo run` will run generator selected from `preset`
+
 # Drawbacks
 
 - gulp improve neo-pkg
