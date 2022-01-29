@@ -1,10 +1,24 @@
 - Start Date: 2022/01/11 23:23:15
-- Reference Issues: (fill in existing related issues, if any)
+- Reference Issues: https://github.com/neo-hack/neo/issues/239
 - Implementation PR: (leave this empty)
 
 # Summary
 
+## Option 1
+
 create **manipulate** workflow or generator to `copy/mv/manipulate` files.
+
+## Option 2
+
+run `generator` after create. `.neo/neorc` file
+
+```json
+{
+  "mario": "pnpm-ci"
+}
+```
+
+If detect `.neo/neorc` contain `neorc` file, automate run generator. It's better than `neo` field in `package`
 
 # Basic example
 
@@ -74,5 +88,5 @@ support generator field. `neo run` will run generator selected from `preset`
 
 # Unresolved questions
 
-- `use` how to load `remote/npm` pkg
-- `preset` contain config files, generator should support load files from `preset`?
+- [ ] `use` how to load `remote/npm` pkg
+- [ ] `preset` contain config files, generator should support load files from `preset`?
