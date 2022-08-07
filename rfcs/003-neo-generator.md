@@ -4,10 +4,6 @@
 
 # Summary
 
-## Option 1
-
-create **manipulate** workflow or generator to `copy/mv/manipulate` files.
-
 ## Option 2
 
 run `generator` after create. `.neo/neorc` file
@@ -73,6 +69,10 @@ if template include `.neo` fold and `generator` yaml file, will start exec gener
 
 support generator field. `neo run` will run generator selected from `preset`
 
+**mario**
+
+a new npm package named mario, create and convert yaml syntax to gulp will be included this package.
+
 # Drawbacks
 
 - gulp improve neo-pkg
@@ -80,7 +80,7 @@ support generator field. `neo run` will run generator selected from `preset`
 
 # Alternatives
 
-- manual copy files from configs
+create **manipulate** workflow or generator to `copy/mv/manipulate` files, instead of download from npm or remote github repo.
 
 # Adoption strategy
 
