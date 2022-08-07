@@ -2,7 +2,7 @@
 
 ## contribute
 
-rfc should named with `[status]-[number]-[feature]`, if rfc already accepted, please remove `[status]`
+rfc should named with `[status]-[number]-[feature]`, if rfc stable, please remove `[status]`
 prefix.
 
 draft rfc is not stable, will be deleted or accepted. It should startswith `DFAFT` prefix.
